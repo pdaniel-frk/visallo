@@ -2,13 +2,14 @@ package org.visallo.vertexium.es;
 
 import org.elasticsearch.action.admin.indices.stats.IndexStats;
 import org.vertexium.*;
-import org.vertexium.elasticsearch.ElasticSearchElementType;
 import org.vertexium.elasticsearch.ElasticSearchSingleDocumentSearchQueryBase;
+import org.vertexium.elasticsearch.ElasticsearchDocumentType;
 import org.vertexium.elasticsearch.ElasticsearchSingleDocumentSearchIndex;
 import org.vertexium.elasticsearch.IndexSelectionStrategy;
 import org.vertexium.query.QueryBase;
 import org.visallo.core.model.properties.VisalloProperties;
 
+import java.util.EnumSet;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
@@ -79,7 +80,7 @@ public abstract class IriIndexSelectionStrategyBase implements IndexSelectionStr
     }
 
     @Override
-    public String[] getIndicesToQuery(ElasticSearchSingleDocumentSearchQueryBase query, ElasticSearchElementType elementType) {
+    public String[] getIndicesToQuery(ElasticSearchSingleDocumentSearchQueryBase query, EnumSet<ElasticsearchDocumentType> elementType) {
         for (QueryBase.HasContainer hasContainer : query.getParameters().getHasContainers()) {
             if (hasContainer instanceof QueryBase.HasValueContainer) {
                 QueryBase.HasValueContainer hasValueContainer = (QueryBase.HasValueContainer) hasContainer;
