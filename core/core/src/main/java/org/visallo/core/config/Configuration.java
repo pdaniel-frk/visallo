@@ -91,6 +91,8 @@ public class Configuration {
     public static final String STATUS_ENABLED = "status.enabled";
     public static final boolean STATUS_ENABLED_DEFAULT = true;
     public static final String SYSTEM_PROPERTY_PREFIX = "visallo.";
+    public static final String WEB_MAX_SESSION_INACTIVE_INTERVAL_SECONDS = "web.maxSessionInactiveIntervalSeconds";
+    public static final int DEFAULT_WEB_MAX_SESSION_INACTIVE_INTERVAL_SECONDS = 30 * 60;
 
     private final ConfigurationLoader configurationLoader;
     private final VisalloResourceBundleManager visalloResourceBundleManager;

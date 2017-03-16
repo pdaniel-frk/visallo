@@ -6,4 +6,7 @@
         <listener-class>org.visallo.web.ApplicationBootstrap</listener-class>
     </listener>
     <distributable/>
+    <listener>
+        <listener-class>org.visallo.web.VisalloSessionListener</listener-class>
+    </listener>
 </web-app>
